@@ -1,18 +1,10 @@
-print("=================================")
-print("Welcome here")
-print("My first post!")
-print("=================================")
+username = input('Enter username: ')
+age = int(input('Enter age: '))
+category = input('Enter Content Category: ')
 
+print("\nInstagram Profile")
+print("=====================")
+print("Username: " + username)
+print("Age: " + age)
+print("Category: " + category)
 
-username = 'ihihi'
-bio = 'yh'
-followers = 100
-
-followers += 50
-print('Day 1 : ', followers)
-
-followers += 20
-print('Day 2 : ', followers)
-
-followers += 10
-print('Day 3 : ', followers)
