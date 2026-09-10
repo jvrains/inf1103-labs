@@ -2,7 +2,7 @@
 #1
 i = 0
 failure = 0
-#2,3,4,5,6,8
+#2,3,4,5,6,7,8
 while True:
     add = input("Please enter a stock quantity, or enter 'quit' to exit: ")
     if add=='quit':
@@ -13,12 +13,14 @@ while True:
             failure+=1
             print("Please enter a positive integer.")
         else:
-            i+=int(num)
+            i+=num
     else:
         failure+=1
         print("Please enter an integer value.")
-        continue
+    if i > 500:
+        print("Your total inventory has exceeded 500!")
+        break
 
- #8
+#8
 print(f"Total Units Processed: {i}") 
 print(f"Number of Failed/Rejected Entries: {failure}")
