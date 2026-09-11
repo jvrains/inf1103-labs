@@ -24,3 +24,10 @@ while True:
 #8
 print(f"Total Units Processed: {i}") 
 print(f"Number of Failed/Rejected Entries: {failure}")
+
+'''
+self reflection task
+hitting limitation that the container terminates after run is concluded, therefore output file stored locally 
+within the container also vanishes
+
+'''
