@@ -31,7 +31,6 @@ def generate_report(total_units, failed_attempts, total_cost, tax):
     print(f"Total Units Processed: {total_units}")
     print(f"Number of Failed/Rejected Entries: {failed_attempts}")
     print(f"Delivery Tax: ${tax}")
-    print(totalcost)
     print(f"Total Cost of Delivery (after Tax): ${total_cost+tax}")
     return None
 
