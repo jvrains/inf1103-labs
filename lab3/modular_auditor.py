@@ -3,7 +3,7 @@ price = 25
 inventorylimit = 500
 
 def get_valid_input():
-    value = input("Please enter a stock quantity, or enter 'quit' to exit:")
+    value = input("Please enter a stock quantity, or enter 'quit' to exit: ")
     if value == "quit":
         return "quit"
     
@@ -27,7 +27,7 @@ def process_delivery(current_total, new_value):
 def calculate_tax(amount):
     return amount*taxrate
 
-def generate_report(total_units, failed_attempts:):
+def generate_report(total_units, failed_attempts):
     print(f"Total Units Processed: {total_units}")
     print(f"Number of Failed/Rejected Entries: {failed_attempts}")
     return None
@@ -40,3 +40,10 @@ while True:
     if entry == "quit":
         break
     elif entry == None:
+        failure += 1
+        continue
+    elif entry > inventorylimit:
+        print("Your total inventory has exceeded 500!")
+        break
+
+
