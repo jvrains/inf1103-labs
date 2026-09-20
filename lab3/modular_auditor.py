@@ -1,33 +1,42 @@
-# lab 3
-#1
-i = 0
-failure = 0
-#2,3,4,5,6,7,8
-while True:
-    add = input("Please enter a stock quantity, or enter 'quit' to exit: ")
-    if add=='quit':
-        break
-    elif add.lstrip('-').isdigit():
-        num = int(add)
-        if num < 0:
-            failure+=1
-            print("Please enter a positive integer.")
-        else:
-            i+=num
-    else:
-        failure+=1
+taxrate = 0.10
+price = 25
+inventorylimit = 500
+
+def get_valid_input():
+    value = input("Please enter a stock quantity, or enter 'quit' to exit:")
+    if value == "quit":
+        return "quit"
+    
+    try:
+        num = int(value)
+    except ValueError:
         print("Please enter an integer value.")
-    if i > 500:
-        print("Your total inventory has exceeded 500!")
+        return None
+
+    if num < 0:
+        print("Please enter a positive integer.")
+        return None
+
+    return num
+
+def process_delivery(current_total, new_value):
+    quantity = current_total + new_value
+    cost = quantity*price
+    return quantity, cost
+
+def calculate_tax(amount):
+    return amount*taxrate
+
+def generate_report(total_units, failed_attempts:):
+    print(f"Total Units Processed: {total_units}")
+    print(f"Number of Failed/Rejected Entries: {failed_attempts}")
+    return None
+
+failure = 0
+
+while True:
+    entry = get_valid_input()
+
+    if entry == "quit":
         break
-
-#8
-print(f"Total Units Processed: {i}") 
-print(f"Number of Failed/Rejected Entries: {failure}")
-
-'''
-self reflection task
-hitting limitation that the container terminates after run is concluded, therefore output file stored locally 
-within the container also vanishes
-
-'''
+    elif entry == None:
