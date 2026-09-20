@@ -20,9 +20,7 @@ def get_valid_input():
     return num
 
 def process_delivery(current_total, new_value):
-    quantity = current_total + new_value
-    cost = quantity*price
-    return quantity, cost
+    return current_total + new_value
 
 def calculate_tax(amount):
     return amount*taxrate
@@ -34,12 +32,13 @@ def generate_report(total_units, failed_attempts, delivery):
     return None
 
 failure = 0
-quantity = 0
+totalcount = 0
 totalcost = 0
 tax = 0
 deliveries = 0
 
 while True:
+    quantity = 0
     entry = get_valid_input()
 
     if entry == "quit":
@@ -47,7 +46,8 @@ while True:
     elif entry == None:
         failure += 1
         continue
-    quantity, totalcost = process_delivery(quantity, entry)
+    totalcount = process_delivery(quantity, entry)
+    totalcost = quantity*price
     deliveries += 1
     tax = calculate_tax(totalcost)
     if quantity > inventorylimit:
