@@ -33,12 +33,9 @@ def generate_report(total_units, failed_attempts, delivery):
 
 failure = 0
 totalcount = 0
-totalcost = 0
-tax = 0
 deliveries = 0
 
 while True:
-    quantity = 0
     entry = get_valid_input()
 
     if entry == "quit":
@@ -46,14 +43,14 @@ while True:
     elif entry == None:
         failure += 1
         continue
-    totalcount = process_delivery(quantity, entry)
-    totalcost = quantity*price
+    totalcount = process_delivery(totalcount, entry)
+    totalcost = entry*price
     deliveries += 1
     tax = calculate_tax(totalcost)
-    if quantity > inventorylimit:
+    if totalcount > inventorylimit:
         print("Your total inventory has exceeded 500!")
         break
     print(f"Delivery Tax: ${tax:.2f}")
     print(f"Total Cost of Delivery (after Tax): ${totalcost+tax:.2f}")
     
-generate_report(quantity, failure, deliveries)
+generate_report(totalcount, failure, deliveries)
