@@ -28,7 +28,7 @@ def calculate_tax(amount):
 def generate_report(total_units, failed_attempts, delivery):
     print(f"Total Units Processed: {total_units}")
     print(f"Number of Failed/Rejected Entries: {failed_attempts}")
-    print(f"Number of Deliveries: {delivery}")
+    print(f"Total Deliveries Processed: {delivery}")
     return None
 
 failure = 0
@@ -40,7 +40,7 @@ while True:
 
     if entry == "quit":
         break
-    elif entry == None:
+    elif entry is None:
         failure += 1
         continue
     totalcount = process_delivery(totalcount, entry)
