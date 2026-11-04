@@ -1,6 +1,77 @@
 import json
 from pathlib import Path
 
+
+# class definitions
+
+class Product:
+
+    def __init__(self, pid: str, name: str, price: float, stock: int):
+        self.__pid = pid
+        self.__name = name
+        self.__price = price
+        self.__stock = stock
+ 
+    def get_id(self) -> str:
+        return self.__pid
+ 
+    def get_name(self) -> str:
+        return self.__name
+ 
+    def get_stock(self) -> int:
+        return self.__stock
+ 
+    def update_stock(self, quantity: int) -> bool:
+        if quantity < 0:
+            return False
+        self.__stock = quantity
+        return True
+ 
+    def display_information(self) -> None:
+        print(
+            f"ID: {self.__pid} | Name: {self.__name} | "
+            f"Price: ${self.__price:.2f} | Stock: {self.__stock}"
+        )
+ 
+    def to_dict(self) -> dict:
+        return {
+            "id": self.__pid,
+            "name": self.__name,
+            "price": self.__price,
+            "stock": self.__stock,
+        }
+
+class Inventory:
+
+    def __init__(self):
+        self.__products = []
+ 
+    def add_product(self, product: Product) -> bool:
+        if self.search_product(product.get_id()) is not None:
+            return False
+        self.__products.append(product)
+        return True
+ 
+    def search_product(self, product_id: str) -> Product | None:
+        for product in self.__products:
+            if product.get_id() == product_id:
+                return product
+        return None
+ 
+    def display_all(self) -> None:
+        if not self.__products:
+            print("\nInventory is currently empty\n")
+            return
+ 
+        print("\nCurrent Inventory")
+        print("-------------------------")
+        for product in self.__products:
+            product.display_information()
+        print("-------------------------\n")
+ 
+    def to_list(self) -> list[dict]:
+        return [product.to_dict() for product in self.__products]
+    
 INVENTORY_FILE = Path(__file__).parent / "inventory.json"
 
 # Checks for missing or corrupt files
