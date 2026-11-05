@@ -1,0 +1,26 @@
+[
+	{
+		"id": "P001",
+		"name": "MOUSE",
+		"price": 29.0,
+		"stock": 123,
+		"type": "physical",
+		"weight": 0.3
+	},
+	{
+		"id": "P002",
+		"name": "ABOBE ACROBAT PRO",
+		"price": 49.99,
+		"stock": 13,
+		"type": "digital",
+		"download_size": 2.3
+	},
+	{
+		"id": "P003",
+		"name": "KEYBOARD",
+		"price": 55.0,
+		"stock": 23,
+		"type": "physical",
+		"weight": 1.0
+	}
+]

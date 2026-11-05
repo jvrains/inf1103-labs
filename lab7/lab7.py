@@ -8,8 +8,12 @@ BACKUP_FILE = Path(__file__).parent / "inventory_backup.json"
 
 
 # class definitions
+class CanBeShipped(ABC):
+    @abstractmethod
+    def calculate_shipping_cost(self) -> float:
+        pass
 
-class Product:
+class Product(ABC):
 
     def __init__(self, pid: str, name: str, price: float, stock: int):
         self.__pid = pid
@@ -45,6 +49,55 @@ class Product:
             "price": self.__price,
             "stock": self.__stock,
         }
+    
+    @abstractmethod
+    def get_fulfilment_info(self) -> str:
+        pass
+
+class PhysicalProduct(Product, CanBeShipped):
+ 
+    BASE_SHIPPING_COST = 5.00
+    COST_PER_KG = 2.00
+ 
+    def __init__(self, pid: str, name: str, price: float, stock: int, weight: float):
+        super().__init__(pid, name, price, stock)
+        self.__weight = weight
+ 
+    def display_information(self) -> None:
+        super().display_information()
+        print(f"Weight: {self.__weight} kg")
+ 
+    def get_fulfilment_info(self) -> str:
+        return "This product requires physical shipping."
+ 
+    def calculate_shipping_cost(self) -> float:
+        return self.BASE_SHIPPING_COST + self.COST_PER_KG * self.__weight
+ 
+    def to_dict(self) -> dict:
+        data = super().to_dict()
+        data["type"] = "physical"
+        data["weight"] = self.__weight
+        return data
+
+class DigitalProduct(Product):
+    """A product that is downloaded. Download size is in megabytes."""
+ 
+    def __init__(self, pid: str, name: str, price: float, stock: int, download_size: float):
+        super().__init__(pid, name, price, stock)
+        self.__download_size = download_size
+ 
+    def display_information(self) -> None:
+        super().display_information()
+        print(f"Download Size: {self.__download_size} MB")
+ 
+    def get_fulfilment_info(self) -> str:
+        return "This product is delivered digitally."
+ 
+    def to_dict(self) -> dict:
+        data = super().to_dict()
+        data["type"] = "digital"
+        data["download_size"] = self.__download_size
+        return data
 
 class Inventory:
 
@@ -77,6 +130,18 @@ class Inventory:
     def to_list(self) -> list[dict]:
         return [product.to_dict() for product in self.__products]
 
+def create_product(item: dict) -> Product:
+    pid = item["id"]
+    name = item["name"]
+    price = float(item["price"])
+    stock = int(item["stock"])
+ 
+    if item["type"] == "physical":
+        return PhysicalProduct(pid, name, price, stock, float(item["weight"]))
+    if item["type"] == "digital":
+        return DigitalProduct(pid, name, price, stock, float(item["download_size"]))
+    raise ValueError("Unknown product type")
+
 def load_inventory() -> Inventory:
     inventory = Inventory()
  
@@ -85,20 +150,17 @@ def load_inventory() -> Inventory:
             data = json.load(f)
  
         for item in data:
-            product = Product(
-                item["id"],
-                item["name"],
-                float(item["price"]),
-                int(item["stock"]),
-            )
-            inventory.add_product(product)
+            inventory.add_product(create_product(item))
  
         print("inventory.json found.\nInventory loaded successfully.\n")
     except FileNotFoundError:
         print("Inventory not found.\nCreating...\n")
         save_inventory(inventory)
     except (json.JSONDecodeError, KeyError, TypeError, ValueError):
-        print("inventory.json is corrupt.\nStarting with an empty inventory.\n")
+        shutil.copy(INVENTORY_FILE, BACKUP_FILE)
+        print("inventory.json is corrupt or uses an old format.")
+        print("A copy was saved as inventory_backup.json.")
+        print("Starting with an empty inventory.\n")
         inventory = Inventory()
  
     return inventory
@@ -147,15 +209,31 @@ def menu() -> int:
         except ValueError:
             pass
         print("Please input an option between 1-6.")
- 
+
+def get_product_type() -> str:
+    while True:
+        choice = input("Product Type (1 = Physical, 2 = Digital): ")
+        if choice == "1":
+            return "physical"
+        if choice == "2":
+            return "digital"
+        print("Please enter 1 or 2.")
+
 def add_product(inventory: Inventory) -> None:
     print("\nAdd New Product")
+    product_type = get_product_type()
     product_id = input("Product ID: ")
     name = input("Product Name: ")
     price = get_float("Price: ")
     stock = get_int("Stock Quantity: ")
  
-    product = Product(product_id, name, price, stock)
+    if product_type == "physical":
+        weight = get_float("Weight (kg): ")
+        product = PhysicalProduct(product_id, name, price, stock, weight)
+    else:
+        download_size = get_float("Download Size (MB): ")
+        product = DigitalProduct(product_id, name, price, stock, download_size)
+ 
     if inventory.add_product(product):
         print("\nProduct added successfully!\n")
     else:
@@ -194,6 +272,9 @@ def search_product(inventory: Inventory) -> None:
     print("\nProduct Found")
     print("-------------------------")
     product.display_information()
+    print(product.get_fulfilment_info())
+    if isinstance(product, CanBeShipped):
+        print(f"Shipping Cost: ${product.calculate_shipping_cost():.2f}")
     print("-------------------------\n")
  
 def main() -> None:
