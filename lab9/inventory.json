@@ -1,0 +1,41 @@
+[
+	{
+		"id": "P001",
+		"name": "MOUSE",
+		"price": 29.0,
+		"stock": 123,
+		"supplier": {
+			"id": "S001",
+			"name": "Logitech",
+			"contact_email": "sales@logitech.com"
+		},
+		"type": "physical",
+		"weight": 0.3
+	},
+	{
+		"id": "P002",
+		"name": "ABOBE ACROBAT PRO",
+		"price": 49.99,
+		"stock": 13,
+		"supplier": {
+			"id": "S002",
+			"name": "Adobe",
+			"contact_email": "sales@adobe.com"
+		},
+		"type": "digital",
+		"download_size": 2.3
+	},
+	{
+		"id": "P003",
+		"name": "KEYBOARD",
+		"price": 55.0,
+		"stock": 23,
+		"supplier": {
+			"id": "S001",
+			"name": "Logitech",
+			"contact_email": "sales@logitech.com"
+		},
+		"type": "physical",
+		"weight": 1.0
+	}
+]
