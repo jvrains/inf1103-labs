@@ -1,0 +1,215 @@
+﻿commit b4eba3780fe81cda75abf2d40ee4df0bcb008bf9
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Nov 20 16:33:44 2026 +0800
+
+    adding tests, dockerfile, notes and uml for lab9
+
+commit 4f53b239dbd3023c44ab9e4a0d5d7a14df54e0f8
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Nov 20 16:27:05 2026 +0800
+
+    added strategy, factory, validation and exception handling for lab9
+
+commit 68b71428a981ee8d627d6e1db6cd18a3a019ba00
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Nov 20 16:06:15 2026 +0800
+
+    gitlog file
+
+commit 1b2ca4cbb89f9feebe014739bcd4a1c489fd0f43
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Nov 20 16:05:52 2026 +0800
+
+    adding dockerfile and gitignore for lab8
+
+commit e1b4fb534ca37acf4d91de7e16456362735c6b47
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Nov 20 16:05:04 2026 +0800
+
+    added supplier, order and orderline classes for lab8
+
+commit a0f887df9753f91f2e87c0ee9d6520c08f7a8a49
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Thu Nov 5 23:02:00 2026 +0800
+
+    updated the rest of the code to match new requirements
+
+commit d3e48a32e5903c10aa6cc9206075181bfa6446ff
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Thu Nov 5 22:24:49 2026 +0800
+
+    adding ABC
+
+commit d5df80a7d7861f8cc4509cf513b38101ee36f7cd
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Thu Nov 5 22:19:50 2026 +0800
+
+    adding dockerfile and gitignore
+
+commit ddf297ea0a6b766efe06ad14c71209e79e48319f
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Thu Nov 5 03:45:16 2026 +0800
+
+    made everyuthing into oop
+
+commit 92221f19a98e1d38a0be452dff1bc1605524d102
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Thu Nov 5 03:22:12 2026 +0800
+
+    added inventory class
+
+commit 35defe7e40cd4deb0b2ee8f8f39b74f5bc45582c
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Thu Nov 5 03:19:49 2026 +0800
+
+    added product class
+
+commit 70cd09d8b45eeec3f21d523199be215d2939e715
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Wed Nov 4 03:04:34 2026 +0800
+
+    added load inventory
+
+commit 0d40d0e1213081d7ded1ce0da26cd609e074268e
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Thu Oct 1 04:52:03 2026 +0800
+
+    docker
+
+commit ab3137b3934887639159dad5248fac12f52fc33c
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Thu Oct 1 04:42:07 2026 +0800
+
+    history tracking
+
+commit c38c5a0b43aedc354c4bbc87b24675ee79d71d4b
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 02:06:42 2026 +0800
+
+    gitlog file
+
+commit d2d24efe2bc1add8d521a959530d8b11e573d546
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 02:03:15 2026 +0800
+
+    polish wording
+
+commit f69199e14f407487cee4a77e208497073b9473ea
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 02:00:59 2026 +0800
+
+    fixed logic
+
+commit 20237152fe520c4bc2fc79e30d066782d95bc424
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 01:54:30 2026 +0800
+
+    changing loop
+
+commit 039ad28e6c111357d9b8cfae02fc3338a061b350
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 01:45:46 2026 +0800
+
+    fixed tax
+
+commit c9f321f80b6a687f6e0dc10cd0846da48b19efcc
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 01:26:45 2026 +0800
+
+    testfinal2
+
+commit 6d14835cfb6a55a312d488f29c30bfa7dcb64c6b
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 01:26:26 2026 +0800
+
+    test final
+
+commit 6f923e24cdaa3610d22868b3c84248e0edd9ab59
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 01:13:44 2026 +0800
+
+    calling main input loop
+
+commit 1ea97df27ff99eee914869b05c5d61ddce982004
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 01:10:28 2026 +0800
+
+    created functions
+
+commit 31d6c73b277cd730665acf4311eea6f29e31042a
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 00:16:42 2026 +0800
+
+    starting lab3
+
+commit 01b375696c160644ab75175538679803a45401be
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 15:18:11 2026 +0800
+
+    commit txt changes
+
+commit a4011f1d565713f3a781f268b7e589c22f3e55fe
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 14:01:01 2026 +0800
+
+    self reflection task
+
+commit bfcb0b9b564e565ccda458e157df5183f53b81b3
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 02:39:21 2026 +0800
+
+    final
+
+commit ab8547d176097e583026908c4a3978ca10ab16ed
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 02:09:00 2026 +0800
+
+    part 8
+
+commit eb9738948fea245a6e26ef6735b06c5cdd429f54
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 02:02:13 2026 +0800
+
+    part 2/3/4/5
+
+commit 41688bd586793280c6dfe7c54781facfcff5a77a
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 01:45:12 2026 +0800
+
+    pushing1
+
+commit 83dd877b5d40c261fa912c6d1a85a517a99b874f
+Author: Jodie <2605387@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 01:44:52 2026 +0800
+
+    part1
+
+commit c377bf3a875de898d352d5361db52b248fb61bc9
+Author: Jodie <jodieywy@gmail.com>
+Date:   Fri Sep 4 14:55:09 2026 +0800
+
+    activity 5 + prev activities cos i deleted them
+
+commit fae2ae4c87a28097448f7dafa242089f4fe2cd79
+Author: Jodie <jodieywy@gmail.com>
+Date:   Fri Sep 4 14:43:42 2026 +0800
+
+    activity 4
+
+commit d370f20f84c468eaf7ae0115d72d22fef089ddf9
+Author: Jodie <jodieywy@gmail.com>
+Date:   Fri Sep 4 14:38:19 2026 +0800
+
+    follower tracker
+
+commit 4200d170b3984a3d13b7cfeea76192b512ed7a4d
+Author: Jodie <jodieywy@gmail.com>
+Date:   Fri Sep 4 14:36:24 2026 +0800
+
+    Test
+
+commit bbcce504c9feecf76a1977919a2ae76d871d4192
+Author: Jodie <jodieywy@gmail.com>
+Date:   Fri Sep 4 04:42:08 2026 +0800
+
+    First post
